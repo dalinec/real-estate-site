@@ -2,9 +2,9 @@ export const usePropertyFormat = (property) => {
   const address = property.location.map((item) => item.name).join(', ');
   const coverPhoto = property.coverPhoto.url;
   const propertyType = `${property.category[0].name}, ${property.category[1].name}`;
-  const price = property.price.toLocalString('en-US', {
+  const price = property.price.toLocaleString('en-US', {
     style: 'currency',
-    currency: 'USD',
+    currency: 'EUR',
     maximumFractionDigits: 0,
   });
   const title = property.title;
