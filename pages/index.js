@@ -1,5 +1,6 @@
 import FeaturedProperties from '@/features/components/FeaturedProperties';
 import HeroBanner from '@/features/components/HeroBanner';
+import MeetTheTeam from '@/features/components/MeetTheTeam';
 import DefaultLayout from '@/features/Layouts/DefaultLayout';
 
 export default function Home({ featuredProperties }) {
@@ -7,6 +8,7 @@ export default function Home({ featuredProperties }) {
     <DefaultLayout>
       <HeroBanner />
       <FeaturedProperties featuredProperties={featuredProperties} />
+      <MeetTheTeam />
     </DefaultLayout>
   );
 }
