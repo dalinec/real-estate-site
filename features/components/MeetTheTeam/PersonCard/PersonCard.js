@@ -29,7 +29,7 @@ const PersonCard = ({ name, image, description, title }) => {
       <Text
         fontSize='md'
         fontWeight='light'
-        numberOfLines='4'
+        numberoflines='4'
         marginTop='1rem'
         color='grey.600'
       >
