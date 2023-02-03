@@ -1,3 +1,4 @@
+import PropertyThumbnailSlider from '@/features/components/Property/PropertyThumbnailSlider';
 import { usePropertyFormat } from '@/features/hooks/usePropertyFormat';
 import DefaultLayout from '@/features/Layouts/DefaultLayout';
 import { Badge, Box, Flex, Grid, GridItem, Text } from '@chakra-ui/react';
@@ -31,7 +32,7 @@ const PropertySingle = ({ property }) => {
           maxWidth='1280px'
           margin='0 auto'
         >
-          <GridItem colSpan='6'>
+          <GridItem className='title' colSpan='6'>
             <Text
               fontSize='3xl'
               fontWeight='medium'
@@ -55,6 +56,9 @@ const PropertySingle = ({ property }) => {
               </Text>
               <Badge colorScheme='green'>{purpose}</Badge>
             </Flex>
+          </GridItem>
+          <GridItem colSpan={{ base: '6', sm: '3' }}>
+            <PropertyThumbnailSlider photos={photos} />
           </GridItem>
         </Grid>
       </Box>
