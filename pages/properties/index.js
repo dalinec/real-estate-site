@@ -27,6 +27,6 @@ export default Properties;
 export async function getStaticProps() {
   const properties = await getProperties(21);
   return {
-    props: { properties: properties },
+    props: { properties },
   };
 }

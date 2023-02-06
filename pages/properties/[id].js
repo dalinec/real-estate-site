@@ -123,6 +123,6 @@ export async function getServerSideProps(context) {
   const property = await getProperty(id);
 
   return {
-    props: { property: property },
+    props: { property },
   };
 }
