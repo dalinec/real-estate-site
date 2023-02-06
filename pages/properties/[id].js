@@ -1,5 +1,6 @@
 import PropertyStats from '@/features/components/Property/PropertyStats';
 import PropertyThumbnailSlider from '@/features/components/Property/PropertyThumbnailSlider';
+import PropertyVideo from '@/features/components/Property/PropertyVideo';
 import TextContentBox from '@/features/components/Property/TextContentBox';
 import { usePropertyFormat } from '@/features/hooks/usePropertyFormat';
 import DefaultLayout from '@/features/Layouts/DefaultLayout';
@@ -99,6 +100,9 @@ const PropertySingle = ({ property }) => {
                   : 'Please contact us for more info'}
               </SimpleGrid>
             </TextContentBox>
+          </GridItem>
+          <GridItem colSpan={{ base: 6, sm: 3 }}>
+            <PropertyVideo coverVideo={coverVideo} />
           </GridItem>
         </Grid>
       </Box>
