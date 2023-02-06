@@ -1,3 +1,4 @@
+import PropertyMatterPort from '@/features/components/Property/PropertyMatterPort/PropertyMatterPort';
 import PropertyStats from '@/features/components/Property/PropertyStats';
 import PropertyThumbnailSlider from '@/features/components/Property/PropertyThumbnailSlider';
 import PropertyVideo from '@/features/components/Property/PropertyVideo';
@@ -102,7 +103,14 @@ const PropertySingle = ({ property }) => {
             </TextContentBox>
           </GridItem>
           <GridItem colSpan={{ base: 6, sm: 3 }}>
-            <PropertyVideo coverVideo={coverVideo} />
+            <TextContentBox title='Video Walkthrough'>
+              <PropertyVideo coverVideo={coverVideo} />
+            </TextContentBox>
+          </GridItem>
+          <GridItem colSpan={{ base: 6, sm: 3 }}>
+            <TextContentBox title='3D Virtual Walkthrough'>
+              <PropertyMatterPort panorama={panorama} />
+            </TextContentBox>
           </GridItem>
         </Grid>
       </Box>
