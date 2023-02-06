@@ -13,5 +13,5 @@ export const getProperties = async (num) => {
       hasPanorama: true,
     },
   });
-  return data.hits;
+  return await data.hits;
 };
