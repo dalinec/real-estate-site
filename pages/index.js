@@ -1,5 +1,6 @@
 import FeaturedProperties from '@/features/components/FeaturedProperties';
 import HeroBanner from '@/features/components/HeroBanner';
+import { getProperties } from '@/features/api/getProperties';
 import MeetTheTeam from '@/features/components/MeetTheTeam';
 import Partners from '@/features/components/Partners';
 import Testimonials from '@/features/components/Testimonials';
@@ -18,8 +19,8 @@ export default function Home({ featuredProperties }) {
 }
 
 export async function getStaticProps() {
-  const { hits } = require('@/features/data/properties');
+  const featuredProperties = await getProperties(6);
   return {
-    props: { featuredProperties: hits.slice(0, 5) },
+    props: { featuredProperties: featuredProperties },
   };
 }

@@ -1,3 +1,4 @@
+import { getProperty } from '@/features/api/getProperty';
 import PropertyMatterPort from '@/features/components/Property/PropertyMatterPort/PropertyMatterPort';
 import PropertyStats from '@/features/components/Property/PropertyStats';
 import PropertyThumbnailSlider from '@/features/components/Property/PropertyThumbnailSlider';
@@ -19,7 +20,6 @@ import { TbMapPin } from 'react-icons/tb';
 const PropertySingle = ({ property }) => {
   const {
     address,
-    coverPhoto,
     propertyType,
     price,
     title,
@@ -33,7 +33,6 @@ const PropertySingle = ({ property }) => {
     coverVideo,
     panorama,
     amenities,
-    furnished,
   } = usePropertyFormat(property);
   return (
     <DefaultLayout>
@@ -120,8 +119,10 @@ const PropertySingle = ({ property }) => {
 export default PropertySingle;
 
 export async function getServerSideProps(context) {
-  const property = require('@/features/data/property');
+  const { id } = context.query;
+  const property = await getProperty(id);
+
   return {
-    props: { property },
+    props: { property: property },
   };
 }
