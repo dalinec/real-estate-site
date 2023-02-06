@@ -14,7 +14,7 @@ export const usePropertyFormat = (property) => {
   const sqSize = property.area.toFixed(2);
   const externalID = property.externalID;
 
-  const photos = property?.photos.map((photo) => photo.url) || [];
+  const photos = property.photos?.map((photo) => photo.url) || [];
   const description = property.description;
   const coverVideoUrl = property.coverVideo.url;
   const coverVideo = coverVideoUrl.slice(coverVideoUrl.length - 11);

@@ -1,3 +1,4 @@
+import PropertyStats from '@/features/components/Property/PropertyStats';
 import PropertyThumbnailSlider from '@/features/components/Property/PropertyThumbnailSlider';
 import { usePropertyFormat } from '@/features/hooks/usePropertyFormat';
 import DefaultLayout from '@/features/Layouts/DefaultLayout';
@@ -59,6 +60,14 @@ const PropertySingle = ({ property }) => {
           </GridItem>
           <GridItem colSpan={{ base: '6', sm: '3' }}>
             <PropertyThumbnailSlider photos={photos} />
+          </GridItem>
+          <GridItem colSpan={{ base: '6', sm: '3' }}>
+            <PropertyStats
+              rooms={rooms}
+              baths={baths}
+              price={price}
+              sqSize={sqSize}
+            />
           </GridItem>
         </Grid>
       </Box>
