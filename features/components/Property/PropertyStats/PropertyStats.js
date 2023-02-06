@@ -9,7 +9,7 @@ const PropertyStats = ({ rooms, baths, price, sqSize }) => {
         fontSize='xl'
         color='gray.500'
         fontWeight='light'
-        gap='1rem'
+        gap='0.6rem'
         justifyContent='space-around'
         alignItems='center'
       >

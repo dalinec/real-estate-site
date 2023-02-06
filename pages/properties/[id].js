@@ -47,7 +47,7 @@ const PropertySingle = ({ property }) => {
       <Box bgColor='#f7f8f9' paddingY='3rem'>
         <Grid
           templateColumns='repeat(6, 1fr)'
-          gap='5'
+          gap={{ base: 0, sm: 5 }}
           maxWidth='1280px'
           margin='0 auto'
         >
@@ -76,11 +76,11 @@ const PropertySingle = ({ property }) => {
               <Badge colorScheme='green'>{purpose}</Badge>
             </Flex>
           </GridItem>
-          <GridItem colSpan={{ base: '6', sm: '3' }}>
+          <GridItem colSpan={{ base: 6, sm: 3 }}>
             <PropertyThumbnailSlider photos={photos} />
           </GridItem>
-          <GridItem colSpan={{ base: '6', sm: '3' }}>
-            <PropertyStats
+          <GridItem colSpan={{ base: 6, sm: 3 }}>
+            <PropertyStats 
               rooms={rooms}
               baths={baths}
               price={price}
