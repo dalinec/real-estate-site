@@ -4,5 +4,5 @@ export const getProperty = async (id) => {
   const { data } = await axios.get('/properties/detail', {
     params: { externalID: id },
   });
-  return await data;
+  return  data;
 };

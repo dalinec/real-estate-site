@@ -6,6 +6,13 @@ import Partners from '@/features/components/Partners';
 import Testimonials from '@/features/components/Testimonials';
 import DefaultLayout from '@/features/Layouts/DefaultLayout';
 
+export const getStaticProps = async () => {
+  const featuredProperties = await getProperties(6);
+  return {
+    props: { featuredProperties },
+  };
+};
+
 export default function Home({ featuredProperties }) {
   return (
     <DefaultLayout>
@@ -18,9 +25,9 @@ export default function Home({ featuredProperties }) {
   );
 }
 
-export async function getStaticProps() {
-  const featuredProperties = await getProperties(6);
-  return {
-    props: { featuredProperties },
-  };
-}
+// export async function getStaticProps() {
+//   const featuredProperties = await getProperties(6);
+//   return {
+//     props: { featuredProperties },
+//   };
+// }

@@ -17,6 +17,14 @@ import {
 } from '@chakra-ui/react';
 import { TbMapPin } from 'react-icons/tb';
 
+export const getServerSideProps = async (context) => {
+  const { id } = context.query;
+  const property = await getProperty(id);
+  return {
+    props: { property },
+  };
+};
+
 const PropertySingle = ({ property }) => {
   const {
     address,
@@ -118,11 +126,11 @@ const PropertySingle = ({ property }) => {
 };
 export default PropertySingle;
 
-export async function getServerSideProps(context) {
-  const { id } = context.query;
-  const property = await getProperty(id);
+// export async function getServerSideProps(context) {
+//   const { id } = context.query;
+//   const property = await getProperty(id);
 
-  return {
-    props: { property },
-  };
-}
+//   return {
+//     props: { property },
+//   };
+// }
