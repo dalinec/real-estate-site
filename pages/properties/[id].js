@@ -1,8 +1,17 @@
 import PropertyStats from '@/features/components/Property/PropertyStats';
 import PropertyThumbnailSlider from '@/features/components/Property/PropertyThumbnailSlider';
+import TextContentBox from '@/features/components/Property/TextContentBox';
 import { usePropertyFormat } from '@/features/hooks/usePropertyFormat';
 import DefaultLayout from '@/features/Layouts/DefaultLayout';
-import { Badge, Box, Flex, Grid, GridItem, Text } from '@chakra-ui/react';
+import {
+  Badge,
+  Box,
+  Flex,
+  Grid,
+  GridItem,
+  SimpleGrid,
+  Text,
+} from '@chakra-ui/react';
 import { TbMapPin } from 'react-icons/tb';
 
 const PropertySingle = ({ property }) => {
@@ -21,7 +30,7 @@ const PropertySingle = ({ property }) => {
     description,
     coverVideo,
     panorama,
-    amenitites,
+    amenities,
     furnished,
   } = usePropertyFormat(property);
   return (
@@ -68,6 +77,28 @@ const PropertySingle = ({ property }) => {
               price={price}
               sqSize={sqSize}
             />
+            <TextContentBox title='Description'>
+              <Text
+                fontWeight='light'
+                color='gray.600'
+                fontSize='1rem'
+                noOfLines='4'
+              >
+                {description}
+              </Text>
+            </TextContentBox>
+            <TextContentBox title='Amenities'>
+              <SimpleGrid
+                columns={{ base: 1, sm: 2 }}
+                fontWeight='light'
+                color='gray.600'
+                fontSize='1rem'
+              >
+                {amenities.length
+                  ? amenities.map((item) => <Text>{item}</Text>)
+                  : 'Please contact us for more info'}
+              </SimpleGrid>
+            </TextContentBox>
           </GridItem>
         </Grid>
       </Box>
