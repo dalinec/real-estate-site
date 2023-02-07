@@ -80,7 +80,7 @@ const PropertySingle = ({ property }) => {
             <PropertyThumbnailSlider photos={photos} />
           </GridItem>
           <GridItem colSpan={{ base: 6, sm: 3 }}>
-            <PropertyStats 
+            <PropertyStats
               rooms={rooms}
               baths={baths}
               price={price}
@@ -104,7 +104,9 @@ const PropertySingle = ({ property }) => {
                 fontSize='1rem'
               >
                 {amenities.length
-                  ? amenities.map((item) => <Text>{item}</Text>)
+                  ? amenities.map((item, index) => (
+                      <Text key={index}>{item}</Text>
+                    ))
                   : 'Please contact us for more info'}
               </SimpleGrid>
             </TextContentBox>
